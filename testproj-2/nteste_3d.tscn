@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ltuwjhsm7wee"]
+
+[ext_resource type="PackedScene" uid="uid://8kuyqj3yvqhg" path="res://test2tableplatform.glb" id="2_7kj74"]
+[ext_resource type="PackedScene" uid="uid://s20s03ggrimd" path="res://testchar.fbx" id="2_bubmq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_aw347"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ip0ri"]
+
+[node name="Node3D" type="Node3D" unique_id=185797954]
+
+[node name="test2tableplatform" parent="." unique_id=1507725900 instance=ExtResource("2_7kj74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.389606, -0.13937187, -13.425114)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1371713849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41487694, -0.4669323, -3.42376)
+use_collision = true
+mesh = SubResource("BoxMesh_aw347")
+
+[node name="testchar1" type="CharacterBody3D" parent="." unique_id=1976966716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6798992, 0)
+
+[node name="testchar" parent="testchar1" unique_id=1854481747 instance=ExtResource("2_bubmq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1578112, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="testchar1" unique_id=1901697310]
+transform = Transform3D(1600, 0, 0, 0, 1600, 0, 0, 0, 1600, 0, 1.3668776, -0.3252411)
+shape = SubResource("BoxShape3D_ip0ri")
+
+[node name="Head" type="Node3D" parent="testchar1" unique_id=1716121804]
