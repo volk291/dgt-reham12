@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://d0y4d3fo5rloc"]
+
+[ext_resource type="FontFile" uid="uid://cioasiigwxrf1" path="res://Jackdriftdemo-YqLV4.ttf" id="1_1dhxy"]
+[ext_resource type="FontFile" uid="uid://8n2eiojtagyt" path="res://MainMenu-MP-f3233fab66b4eb75997ef7e5c73a820e993166f9/Chaos Aura.otf" id="2_c2v5l"]
+[ext_resource type="PackedScene" uid="uid://cknqwul12rgbe" path="res://MainMenu-MP-f3233fab66b4eb75997ef7e5c73a820e993166f9/pomegrantejuicFIANLebox.glb" id="3_bsbys"]
+
+[sub_resource type="Theme" id="Theme_bsbys"]
+
+[node name="StartMenu" type="CanvasLayer" unique_id=646452167]
+
+[node name="Menu" type="Control" parent="." unique_id=1560624397]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bsbys")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu" unique_id=238514022]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer" unique_id=1177212690]
+layout_mode = 2
+
+[node name="title" type="Label" parent="Menu/MarginContainer/VBoxContainer" unique_id=607350057]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_1dhxy")
+theme_override_font_sizes/font_size = 70
+text = "Blinking Red"
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/MarginContainer/VBoxContainer" unique_id=1393076542]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="startbutt" type="Button" parent="Menu/MarginContainer/VBoxContainer" unique_id=1460312756]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_c2v5l")
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+
+[node name="chapters" type="Button" parent="Menu/MarginContainer/VBoxContainer/startbutt" unique_id=259427700]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 59.0
+offset_right = 161.0
+offset_bottom = 105.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_c2v5l")
+theme_override_font_sizes/font_size = 30
+text = "chapters"
+
+[node name="setting" type="Button" parent="Menu/MarginContainer/VBoxContainer/startbutt/chapters" unique_id=210398246]
+layout_mode = 0
+offset_top = 54.0
+offset_right = 162.0
+offset_bottom = 100.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_c2v5l")
+theme_override_font_sizes/font_size = 30
+text = "setting"
+
+[node name="exit" type="Button" parent="Menu/MarginContainer/VBoxContainer/startbutt/chapters/setting" unique_id=1727554639]
+layout_mode = 0
+offset_top = 54.0
+offset_right = 162.0
+offset_bottom = 100.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_c2v5l")
+theme_override_font_sizes/font_size = 30
+text = "exit"
+
+[node name="background" type="Node3D" parent="." unique_id=985754911]
+
+[node name="juicebox" parent="background" unique_id=433829126 instance=ExtResource("3_bsbys")]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="background" unique_id=1386934362]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="background/SubViewportContainer" unique_id=1519007538]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="background/SubViewportContainer/SubViewport" unique_id=860155501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7971716, 2, 5)
